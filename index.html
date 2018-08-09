@@ -5,64 +5,13 @@
 
   
     <title>Payall Nigeria</title>
-    <script src="offline.min.js"></script>
+ 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
- <link rel="stylesheet" href="offline-theme-hubspot.css" />
-<!--<link rel="stylesheet" href="../themes/offline-theme-chrome.css" />-->
-<link rel="stylesheet" href="offline-language-english.css" />
+ 
 
 
-	
-	
-    // Wait for device API libraries to load
-    //
 	
 	 
-	
- 
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-     
- 
-       var networkState = checkConnection();
-   /* load local files if there is not network connection */
-                  if (networkState == Connection.NONE) {
-                      window.location="error.html";
-                  } else {
-             var run = function(){
-  var req = new XMLHttpRequest();
-  req.timeout = 5000;
-  req.open('GET', 'https://payall.ng/base/', true);
-  req.send();
-}
-
-setInterval(run, 3000);
-                  }
-    }
-
-        function checkConnection() {
-            var networkState = navigator.connection.type;
-
-            var states = {};
-            states[Connection.UNKNOWN]  = 'Unknown connection';
-            states[Connection.ETHERNET] = 'Ethernet connection';
-            states[Connection.WIFI]     = 'WiFi connection';
-            states[Connection.CELL_2G]  = 'Cell 2G connection';
-            states[Connection.CELL_3G]  = 'Cell 3G connection';
-            states[Connection.CELL_4G]  = 'Cell 4G connection';
-            states[Connection.CELL]     = 'Cell generic connection';
-            states[Connection.NONE]     = 'No network connection';
-  return networkState;
-            //alert('Connection type: ' + states[networkState]);
-        }
-
-    </script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
      <script type="text/javascript" charset="utf-8">
   function onDeviceReady() {
@@ -81,6 +30,6 @@ setInterval(run, 3000);
   </head>
    <body>
  
-      
+      Printer
   </body>
 </html>
