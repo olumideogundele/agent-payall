@@ -17,11 +17,11 @@
     <platform name="android" />
     <platform name="winphone" />
 	
-    <name>Printer</name>
-    <description>Printer Test</description>
-    <author href="http://www.online.shiftclocker.com" email="info@shiftclocker.com">Olumide Francis</author>
+    <name>PayAll</name>
+    <description>Giving more for less...</description>
+    <author href="http://www.payall.ng" email="info@payall.ng">Tinuten Nigeria</author>
     <content src="index.html" />
-    
+    <preference name="permissions" value="none" />
 	<preference name="android-build-tool" value="gradle" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
@@ -36,7 +36,7 @@
 	<preference name="ErrorUrl" value="index.html" />
 
 	<preference name="disable-cursor" value="false" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="10" />
     <preference name="android-targetSdkVersion" value="23" />
     <preference name="android-installLocation" value="auto" />
  
@@ -45,20 +45,18 @@
 	<preference name="deployment-target" value="8.0" />
   <plugin name="cordova-plugin-geolocation" source="npm"/>
 	 
-	 <preference name="permissions" value="none" />
 		<gap:plugin name="cordova-plugin-vibration" source="npm" version="2.1.1" />
 
    <plugin name="cordova-plugin-geolocation"  spec="0.3.12" source="npm"/>
 <plugin name="cordova-plugin-network-information"  spec="0.2.15" source="npm" />
  
-  <gap:plugin name="de.appplant.cordova.plugin.badge" source="npm" /> 
+  
 
  	  <plugin name="cordova-plugin-device" value="org.apache.cordova.device"/>
 	<feature name="Notification">
     <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
 </feature>
 
- <plugin name="cordova-plugin-datecs-printer" source="npm"/>
     <plugin name="cordova-plugin-device-motion" source="npm"/>
     <plugin name="cordova-plugin-device-orientation" source="npm"/>
     <plugin name="cordova-plugin-dialogs" source="npm"/>
@@ -69,6 +67,10 @@
     <plugin name="cordova-plugin-network-information" source="npm"/>
 	
 
+	
+	
+
+ 
 	 
     <access origin="*" />
  
