@@ -36,7 +36,7 @@
 	<preference name="ErrorUrl" value="index.html" />
 
 	<preference name="disable-cursor" value="false" />
-    <preference name="android-minSdkVersion" value="10" />
+    <preference name="android-minSdkVersion" value="15" />
     <preference name="android-targetSdkVersion" value="23" />
     <preference name="android-installLocation" value="auto" />
  
@@ -57,6 +57,8 @@
     <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
 </feature>
 
+
+  <plugin name="cordova-plugin-datecs-printer-qr" source="npm"/>
     <plugin name="cordova-plugin-device-motion" source="npm"/>
     <plugin name="cordova-plugin-device-orientation" source="npm"/>
     <plugin name="cordova-plugin-dialogs" source="npm"/>
