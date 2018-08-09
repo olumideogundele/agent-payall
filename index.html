@@ -23,30 +23,11 @@
 	<script src="js/printer.js"></script>
     <script src="js/datecsprinter.service.js"></script>
 	
-	<script>
-	call()
-	{
-	window.DatecsPrinter.listBluetoothDevices(
-  function (devices) {
-    window.DatecsPrinter.connect(devices[0].address, 
-      function() {
-        printSomeTestText();
-      },
-      function() {
-        alert(JSON.stringify(error));
-      }
-    );
-  },
-  function (error) {
-    alert(JSON.stringify(error));
-  }
-);
-}
-	</script>
+	 
 	
   </head>
 
-  <body onload="call()">
+  <body>
   
   <button onclick="listBluetoothDevices()"> Click Me</button>
    
