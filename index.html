@@ -15,9 +15,10 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
      <script type="text/javascript" charset="utf-8">
   function onDeviceReady() {
-  alert("i am here");
+  
   
   BTPrinter.list(function(data){
+	  alert("i am here");
        alert("Success");
         alert(data); //list of printer in data array
     },function(err){
