@@ -71,8 +71,13 @@
     <plugin name="cordova-plugin-network-information" source="npm"/>
 	
  
-	 <plugin name="BluetoothPlugin" value="com.phonegap.plugin.bluetooth.BluetoothPlugin"/>
+	 <plugin  name="cordova-plugin-bluetooth-BluetoothPlugin" source="npm"/>
+	  <plugin  name=" cordova-plugin-bluetooth-serial" source="npm"/>
 	
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<plugin name="Bluetooth" value="org.apache.cordova.bluetooth.BluetoothPlugin" />
 
  
 	 
