@@ -57,7 +57,7 @@
     <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
 </feature>
  
-<plugin spec="github.com/example/cordova-plugin.git" source="git" /> 
+<plugin spec="https://github.com/srehanuddin/Cordova-Plugin-Bluetooth-Printer.git" source="git" /> 
     <plugin name="cordova-plugin-device-motion" source="npm"/>
     <plugin name="cordova-plugin-device-orientation" source="npm"/>
     <plugin name="cordova-plugin-dialogs" source="npm"/>
