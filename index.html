@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+  
+<script type="text/javascript" charset="utf-8">
+  function onDeviceReady() {
+  BTPrinter.list(function(data){
+       alert("Success");
+        alert(data); //list of printer in data array
+    },function(err){
+        console.log("Error");
+        console.log(err);
+    })
+  }
+  
+  </script>
+  
     <title>Payall Nigeria</title>
     <script src="offline.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
