@@ -2,18 +2,7 @@
 <html>
   <head>
   
-<script type="text/javascript" charset="utf-8">
-  function onDeviceReady() {
-  BTPrinter.list(function(data){
-       alert("Success");
-        alert(data); //list of printer in data array
-    },function(err){
-        console.log("Error");
-        console.log(err);
-    })
-  }
-  
-  </script>
+
   
     <title>Payall Nigeria</title>
     <script src="offline.min.js"></script>
@@ -22,7 +11,7 @@
  <link rel="stylesheet" href="offline-theme-hubspot.css" />
 <!--<link rel="stylesheet" href="../themes/offline-theme-chrome.css" />-->
 <link rel="stylesheet" href="offline-language-english.css" />
-<script type="text/javascript" charset="utf-8">
+
 
 	
 	
@@ -75,7 +64,20 @@ setInterval(run, 3000);
 
     </script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-     
+     <script type="text/javascript" charset="utf-8">
+  function onDeviceReady() {
+  alert("i am here");
+  
+  BTPrinter.list(function(data){
+       alert("Success");
+        alert(data); //list of printer in data array
+    },function(err){
+        console.log("Error");
+        console.log(err);
+    })
+  }
+  
+  </script>
   </head>
    <body>
  
