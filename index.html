@@ -18,15 +18,23 @@
      <script type="text/javascript" charset="utf-8">
   function onDeviceReady() {
   
-  
-  BTPrinter.list(function(data){
-	  alert("i am here");
-       alert("Success");
-        alert(data); //list of printer in data array
-    },function(err){
-        alert("Error");
-        alert(err);
-    })
+ window.DatecsPrinter.listBluetoothDevices(
+  function (devices) {
+    window.DatecsPrinter.connect(devices[0].address, 
+      function() {
+        printSomeTestText();
+      },
+      function() {
+        alert(JSON.stringify(error));
+      }
+    );
+  },
+  function (error) {
+    alert(JSON.stringify(error));
+  }
+);
+
+
   }
   
   </script>
