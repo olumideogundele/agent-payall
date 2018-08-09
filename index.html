@@ -1,34 +1,70 @@
 <!DOCTYPE html>
 <html>
   <head>
-  
-  
-  
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>Shiftclocker</title>
+    <script src="offline.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-    < 
+ <link rel="stylesheet" href="offline-theme-hubspot.css" />
+<!--<link rel="stylesheet" href="../themes/offline-theme-chrome.css" />-->
+<link rel="stylesheet" href="offline-language-english.css" />
+<script type="text/javascript" charset="utf-8">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
- 
-
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-    <!-- your app's js <script src="js/printer.js"></script>
-    <script src="js/datecsprinter.service.js"></script>-->
 	
+	
+    // Wait for device API libraries to load
+    //
 	
 	 
 	
-  </head>
+ 
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
-  <body>
-  
-  <button onclick="listBluetoothDevices()"> Click Me</button>
-   
+    // device APIs are available
+    //
+    function onDeviceReady() {
+     
+ 
+       var networkState = checkConnection();
+   /* load local files if there is not network connection */
+                  if (networkState == Connection.NONE) {
+                      window.location="error.html";
+                  } else {
+             var run = function(){
+  var req = new XMLHttpRequest();
+  req.timeout = 5000;
+  req.open('GET', 'https://shiftclocker.com/test2/dcare/', true);
+  req.send();
+}
+
+setInterval(run, 3000);
+                  }
+    }
+
+        function checkConnection() {
+            var networkState = navigator.connection.type;
+
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Cell 2G connection';
+            states[Connection.CELL_3G]  = 'Cell 3G connection';
+            states[Connection.CELL_4G]  = 'Cell 4G connection';
+            states[Connection.CELL]     = 'Cell generic connection';
+            states[Connection.NONE]     = 'No network connection';
+  return networkState;
+            //alert('Connection type: ' + states[networkState]);
+        }
+
+    </script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+     <meta http-equiv="refresh" content="2;URL='home.html'" />
+  </head>
+   <body>
+ 
+      
   </body>
 </html>
