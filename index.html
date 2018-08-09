@@ -16,8 +16,20 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	<script src="js/printer.js"></script>
      <script type="text/javascript" charset="utf-8">
+	 
+	 
+	 function myCAll()
+	 {
+		 
+		 
+	$var = DatecsPrinter.connect(addresses[0]);	 
+	alert($var+" Bluetooth");
+	
+	 DatecsPrinter.listBluetoothDevices();
+		 
+	 }
   function onDeviceReady() {
-  
+  alert("Here");
  window.DatecsPrinter.listBluetoothDevices(
   function (devices) {
     window.DatecsPrinter.connect(devices[0].address, 
@@ -43,5 +55,7 @@
  
       Printer
       <button onClick="listBluetoothDevices()"> CLick Me</button>
+      
+            <button onClick="myCAll()"> CLick Me2</button>
   </body>
 </html>
