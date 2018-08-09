@@ -58,7 +58,9 @@
 </feature>
  
 <plugin spec="https://github.com/srehanuddin/Cordova-Plugin-Bluetooth-Printer.git" source="git" /> 
-    <plugin name="cordova-plugin-device-motion" source="npm"/>
+
+
+    <plugin name="cordova-plugin-datecs-printer" source="npm"/>
     <plugin name="cordova-plugin-device-orientation" source="npm"/>
     <plugin name="cordova-plugin-dialogs" source="npm"/>
 <plugin name="cordova-plugin-file" spec="~6.0.0" />    
