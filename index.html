@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+  
+  
+  
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
@@ -20,9 +23,30 @@
 	<script src="js/printer.js"></script>
     <script src="js/datecsprinter.service.js"></script>
 	
+	<script>
+	call()
+	{
+	window.DatecsPrinter.listBluetoothDevices(
+  function (devices) {
+    window.DatecsPrinter.connect(devices[0].address, 
+      function() {
+        printSomeTestText();
+      },
+      function() {
+        alert(JSON.stringify(error));
+      }
+    );
+  },
+  function (error) {
+    alert(JSON.stringify(error));
+  }
+);
+}
+	</script>
+	
   </head>
 
-  <body>
+  <body onload="call() listBluetoothDevices()">
    
   </body>
 </html>

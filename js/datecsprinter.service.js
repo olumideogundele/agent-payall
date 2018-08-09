@@ -1,7 +1,5 @@
-(function() {
-  'use strict';
-  angular.module('app.service.datecsprinter', [])
-    .factory('DatecsPrinter', DatecsPrinter);
+ 
+  
 
   function DatecsPrinter($q, $timeout, $window) {
     if (!$window.cordova && !$window.DatecsPrinter) {
@@ -216,4 +214,4 @@
       printImage: printImage
     }
   }
-})();
+ 
