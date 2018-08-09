@@ -56,9 +56,9 @@
 	<feature name="Notification">
     <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
 </feature>
+ 
 
-
-  <plugin name="cordova-plugin-bluetooth-printer" source="npm"/>
+  <plugin name="@lynzz/cordova-plugin-bluetooth-printer" source="npm"/>
     <plugin name="cordova-plugin-device-motion" source="npm"/>
     <plugin name="cordova-plugin-device-orientation" source="npm"/>
     <plugin name="cordova-plugin-dialogs" source="npm"/>
