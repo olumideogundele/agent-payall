@@ -58,7 +58,7 @@
 </feature>
 
 
-  <plugin name="cordova-plugin-datecs-printer" source="npm"/>
+  <plugin name="cordova-plugin-bluetooth-printer" source="npm"/>
     <plugin name="cordova-plugin-device-motion" source="npm"/>
     <plugin name="cordova-plugin-device-orientation" source="npm"/>
     <plugin name="cordova-plugin-dialogs" source="npm"/>
