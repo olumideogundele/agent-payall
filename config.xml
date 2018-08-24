@@ -66,7 +66,7 @@
     <plugin name="cordova-plugin-media" source="npm"/>
     <plugin name="cordova-plugin-network-information" source="npm"/>
 	
-<plugin name="cordova-plugin-bluetooth-serial" spec="0.4.5" source="npm" />
+<plugin name="cordova-plugin-bluetooth-serial" source="npm" />
 	
 
 	
