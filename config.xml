@@ -39,11 +39,7 @@
     <preference name="android-minSdkVersion" value="10" />
     <preference name="android-targetSdkVersion" value="23" />
     <preference name="android-installLocation" value="auto" />
-<config-file target="AndroidManifest.xml" parent="/manifest">
-            <uses-permission android:name="android.permission.BLUETOOTH" />
-            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-</config-file>
+ 
 	 
 	<preference name="target-device" value="universal" />
 	<preference name="deployment-target" value="8.0" />
