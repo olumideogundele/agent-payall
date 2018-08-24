@@ -6,6 +6,36 @@
     </head>
 
     <body>
+        <script>
+            $(document).ready(function() {
+
+    $("#testco").click(function() {
+        bluetoothSerial.connect("00:19:5D:23:D1:7F", connectSuccess, connectFailure);
+    });
+
+  
+ $("#listnwrite").click(function() {
+        bluetoothSerial.list(function(devices) {
+            devices.forEach(function(device) {
+                var data = "something \r\n";
+                alert(device.address);
+                bluetoothSerial.connect(device.address, connectSuccess, connectFailure);
+                bluetoothSerial.write(data, success, failure);
+            })
+        }, connectFailure);
+ });
+
+    $("#insecure").click(function() {
+        bluetoothSerial.connectInsecure("00:19:5D:23:D1:7F", connectSuccess, connectFailure);
+    });
+
+    $("#deco").click(function() {
+        bluetoothSerial.disconnect(sucessdeco, faildeco);
+    });
+
+});
+            
+        </script>
         <div class="app">
             <div id="ui">
                 <button id="connectButton">Connect</button>
@@ -17,5 +47,10 @@
         <script>
             app.initialize();
         </script>
+        
+        <button id="testco" type="button">Test Connect</button>
+<button id="listnwrite" type="button">List & Write</button>
+<button id="insecure" type="button">Insecure connect</button>
+<button id="deco" type="button">Disconnect bluetooth</button>
     </body>
 </html>
