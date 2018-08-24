@@ -7,7 +7,7 @@
 
 
 var app = {
-    macAddress: "AA:BB:CC:DD:EE:FF",  // get your mac address from bluetoothSerial.list
+    macAddress: "66:02:FE:35:B4:66",  // get your mac address from bluetoothSerial.list
     chars: "",
 
 /*
