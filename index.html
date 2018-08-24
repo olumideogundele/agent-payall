@@ -11,6 +11,36 @@
         <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.min.css">
         <title>Light Control</title>
         <script src="js/jquery-1.9.1.min.js"></script>
+        
+        
+         <script> 
+        $(document).ready(function() {
+
+    $("#testco").click(function() {
+        bluetoothSerial.connect("66:02:FE:35:B4:66", connectSuccess, connectFailure);
+    });
+
+ $("#listnwrite").click(function() {
+        bluetoothSerial.list(function(devices) {
+            devices.forEach(function(device) {
+                var data = "something \r\n";
+                alert(device.address);
+                bluetoothSerial.connect(device.address, connectSuccess, connectFailure);
+                bluetoothSerial.write(data, success, failure);
+            })
+        }, connectFailure);
+ });
+    $("#insecure").click(function() {
+        bluetoothSerial.connectInsecure("00:19:5D:23:D1:7F", connectSuccess, connectFailure);
+    });
+
+    $("#deco").click(function() {
+        bluetoothSerial.disconnect(sucessdeco, faildeco);
+    });
+
+});
+
+        </script>
 
     </head>
     <body>
@@ -50,6 +80,14 @@
                 <a class="topcoat-button--large" id="disconnectButton">Disconnect</a>
             </p>
         </div>
+        
+        <button id="testco" type="button">Test Connect</button>
+<button id="listnwrite" type="button">List & Write</button>
+<button id="insecure" type="button">Insecure connect</button>
+<button id="deco" type="button">Disconnect bluetooth</button>
+        
+        
+        
         <div id="messageDiv">        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/underscore-min.js"></script>
