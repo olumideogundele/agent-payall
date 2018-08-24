@@ -59,7 +59,7 @@
     <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
 </feature>
  
-<plugin name="Bluetooth" value="org.apache.cordova.bluetooth.BluetoothPlugin" />
+ 
 
 
 
