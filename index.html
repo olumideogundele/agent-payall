@@ -1,59 +1,35 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <title>Simple Serial</title>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
+
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Bluetooth Serial Chat</title>
     </head>
-
     <body>
-         <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head> 
-        <script>
-            $(document).ready(function() {
-
-    $("#testco").click(function() {
-        bluetoothSerial.connect("00:19:5D:23:D1:7F", connectSuccess, connectFailure);
-    });
-
-  
- $("#listnwrite").click(function() {
-        bluetoothSerial.list(function(devices) {
-            devices.forEach(function(device) {
-                var data = "something \r\n";
-                alert(device.address);
-                bluetoothSerial.connect(device.address, connectSuccess, connectFailure);
-                bluetoothSerial.write(data, success, failure);
-            })
-        }, connectFailure);
- });
-
-    $("#insecure").click(function() {
-        bluetoothSerial.connectInsecure("00:19:5D:23:D1:7F", connectSuccess, connectFailure);
-    });
-
-    $("#deco").click(function() {
-        bluetoothSerial.disconnect(sucessdeco, faildeco);
-    });
-
-});
-            
-        </script>
         <div class="app">
-            <div id="ui">
-                <button id="connectButton">Connect</button>
+            <h1>Bluetooth Serial Chat</h1>
+            <div id="mainPage">
+                <ul id="deviceList">
+                </ul>
+                <button id="refreshButton">Refresh</button>
             </div>
-        <div id="message">Hello.</div>
+            <div id="detailPage">
+                <div id="resultDiv"></div>
+                <div>
+                    <input type="text" id="messageInput" value="Hello"/>
+                    <button id="sendButton">Send</button>
+                </div>
+                <button id="disconnectButton">Disconnect</button>
+            </div>
+            <div id="statusDiv"></div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/printer.js"></script>
-        <script>
+        <script type="text/javascript">
             app.initialize();
         </script>
-        
-        <button id="testco" type="button">Test Connect</button>
-<button id="listnwrite" type="button">List & Write</button>
-<button id="insecure" type="button">Insecure connect</button>
-<button id="deco" type="button">Disconnect bluetooth</button>
     </body>
 </html>
