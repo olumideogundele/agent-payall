@@ -70,7 +70,7 @@
 	
 
 	
-	<plugin  name="cordova-bluetooth-bluetoothplugin"  source="npm"/>
+<plugin spec="https://github.com/tanelih/phonegap-bluetooth-plugin.git" source="git" />
 
  
 	 
