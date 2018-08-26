@@ -121,6 +121,15 @@ var app = {
         };
 
         var data = messageInput.value;
+        var data = new Uint8Array(4);
+data[0] = 0x41;
+data[1] = 0x42;
+data[2] = 0x43;
+data[3] = 0x44;
+bluetoothSerial.write(data, success, failure);
+
+// Array Buffer
+bluetoothSerial.write(data.buffer, success, failure);
         bluetoothSerial.write([109,73,71,72,84,89,32,73,83,32,65,32,71,79,79,68,32,80,82,79,71,82,65,78,78,69,82,10,101,114], success, failure);
     },
     disconnect: function(event) {
