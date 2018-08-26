@@ -130,7 +130,19 @@ var app = {
 
 // Array Buffer
 bluetoothSerial.write(data.buffer, success, failure);
+        
+        //I'll &quot;walk&quot; the &lt;b&gt;dog&lt;/b&gt; now
+   
         bluetoothSerial.write([27,70,27,114,1,109,73,71,72,84,89,32,73,83,32,65,32,71,79,79,10,68,32,80,82,79,71,82,65,78,78,69,82,10,101,114], success, failure);
+		
+		
+		
+		   bluetoothSerial.write("I'll &quot;walk&quot; the &lt;b&gt;dog&lt;/b&gt; now", success, failure);
+		   
+		   
+		      bluetoothSerial.write([0, 10], success, failure);
+		
+		
     },
     disconnect: function(event) {
         bluetoothSerial.disconnect(app.showMainPage, app.onError);
