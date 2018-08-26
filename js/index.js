@@ -129,7 +129,7 @@ var app = {
 //bluetoothSerial.write(data, success, failure);
 
 // Array Buffer
-bluetoothSerial.write(data.buffer, success, failure);
+//bluetoothSerial.write(data.buffer, success, failure);
         
         //I'll &quot;walk&quot; the &lt;b&gt;dog&lt;/b&gt; now
     var bytes=[84,104,97,110,107,32,89,111,117,32,102,111,114,32,99,104,111,111,115,105,110,103,32,80,97,121,65,108,108,46,10,11,66,101,108,111,119,32,97,114,101,32,116,104,101,32,105,110,102,111,114,109,97,116,105,111,110,32,111,102,32,121,111,117,32,116,114,97,110,115,97,99,116,105,111,110,46,10];
