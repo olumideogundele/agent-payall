@@ -73,7 +73,7 @@
 
 	
 <plugin spec="https://github.com/tanelih/phonegap-bluetooth-plugin.git" source="git" />
-<plugin spec="https://github.com/NielsLeenheer/EscPosEncoder.git" source="git" />	
+ 
 	
 	
 	
