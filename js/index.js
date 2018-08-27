@@ -104,7 +104,10 @@ var app = {
         };
 
         var data = messageInput.value;
-        bluetoothSerial.write([data], success, failure);
+       var data2 = messageInput2.value;
+        bluetoothSerial.write(data, success, failure);
+       bluetoothSerial.write([10,10], success, failure);
+       bluetoothSerial.write(data2, success, failure);
     },
     disconnect: function(event) {
         bluetoothSerial.disconnect(app.showMainPage, app.onError);
