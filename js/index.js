@@ -152,10 +152,9 @@ var app = {
     onError: function(reason) {
         alert("ERROR: " + reason); // real apps should use notification.alert
     }
-};
-
-
-function stringToBytes(string) {
+    
+    
+    function stringToBytes(string) {
     // based on http://ciaranj.blogspot.fr/2007/11/utf8-characters-encoding-in-javascript.html
 
     var bytes = [];
@@ -185,3 +184,8 @@ function stringToBytes(string) {
 
     return new Uint8Array(bytes);
 }
+    
+};
+
+
+
