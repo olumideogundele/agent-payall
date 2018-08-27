@@ -150,3 +150,35 @@ var app = {
         alert("ERROR: " + reason); // real apps should use notification.alert
     }
 };
+
+
+function stringToBytes(string) {
+    // based on http://ciaranj.blogspot.fr/2007/11/utf8-characters-encoding-in-javascript.html
+
+    var bytes = [];
+
+    for (var n = 0; n < string.length; n++) {
+
+        var c = string.charCodeAt(n);
+
+        if (c < 128) {
+
+            bytes[bytes.length]= c;
+
+        } else if((c > 127) && (c < 2048)) {
+
+            bytes[bytes.length] = (c >> 6) | 192;
+            bytes[bytes.length] = (c & 63) | 128;
+
+        } else {
+
+            bytes[bytes.length] = (c >> 12) | 224;
+            bytes[bytes.length] = ((c >> 6) & 63) | 128;
+            bytes[bytes.length] = (c & 63) | 128;
+
+        }
+
+    }
+
+    return new Uint8Array(bytes);
+}
