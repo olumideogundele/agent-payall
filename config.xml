@@ -49,7 +49,7 @@
 
    <plugin name="cordova-plugin-geolocation"  spec="0.3.12" source="npm"/>
 <plugin name="cordova-plugin-network-information"  spec="0.2.15" source="npm" />
-<plugin name="esc-pos-encoder" source="npm" />	
+ 
 	
  
   
@@ -73,6 +73,11 @@
 
 	
 <plugin spec="https://github.com/tanelih/phonegap-bluetooth-plugin.git" source="git" />
+<plugin spec="https://github.com/NielsLeenheer/EscPosEncoder.git" source="git" />	
+	
+	
+	
+	
 
  
 	 
