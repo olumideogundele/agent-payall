@@ -49,6 +49,8 @@
 
    <plugin name="cordova-plugin-geolocation"  spec="0.3.12" source="npm"/>
 <plugin name="cordova-plugin-network-information"  spec="0.2.15" source="npm" />
+<plugin name="esc-pos-encoder" source="npm" />	
+	
  
   
 
