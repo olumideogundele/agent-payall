@@ -112,7 +112,7 @@ var app = {
 
         var success = function() {
             console.log("success");
-            resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + stringToBytes(messageInput.value) + "<br/>";
+            resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + messageInput.value + "<br/>";
             resultDiv.scrollTop = resultDiv.scrollHeight;
         };
 
@@ -120,11 +120,12 @@ var app = {
             alert("Failed writing data to Bluetooth peripheral");
         };
 
-        var data = stringToBytes(messageInput.value);
-        
-        
-        
-        bluetoothSerial.write(stringToBytes(data), success, failure);
+        var data = messageInput.value;
+		
+	 
+		
+		
+        bluetoothSerial.write(data, success, failure);
     },
     disconnect: function(event) {
         bluetoothSerial.disconnect(app.showMainPage, app.onError);
@@ -152,40 +153,4 @@ var app = {
     onError: function(reason) {
         alert("ERROR: " + reason); // real apps should use notification.alert
     }
-    
-    
-    function stringToBytes(string) {
-    // based on http://ciaranj.blogspot.fr/2007/11/utf8-characters-encoding-in-javascript.html
-
-    var bytes = [];
-
-    for (var n = 0; n < string.length; n++) {
-
-        var c = string.charCodeAt(n);
-
-        if (c < 128) {
-
-            bytes[bytes.length]= c;
-
-        } else if((c > 127) && (c < 2048)) {
-
-            bytes[bytes.length] = (c >> 6) | 192;
-            bytes[bytes.length] = (c & 63) | 128;
-
-        } else {
-
-            bytes[bytes.length] = (c >> 12) | 224;
-            bytes[bytes.length] = ((c >> 6) & 63) | 128;
-            bytes[bytes.length] = (c & 63) | 128;
-
-        }
-
-    }
-
-    return new Uint8Array(bytes);
-}
-    
 };
-
-
-
