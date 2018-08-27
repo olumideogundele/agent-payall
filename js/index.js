@@ -125,7 +125,7 @@ var app = {
 	 
 		
 		
-        bluetoothSerial.write(data, success, failure);
+        bluetoothSerial.write([data], success, failure);
     },
     disconnect: function(event) {
         bluetoothSerial.disconnect(app.showMainPage, app.onError);
