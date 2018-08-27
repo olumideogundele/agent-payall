@@ -112,7 +112,7 @@ var app = {
 
         var success = function() {
             console.log("success");
-            resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + messageInput.value + "<br/>";
+            resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + stringToBytes(messageInput.value) + "<br/>";
             resultDiv.scrollTop = resultDiv.scrollHeight;
         };
 
@@ -124,7 +124,7 @@ var app = {
         
         
         
-        bluetoothSerial.write(data, success, failure);
+        bluetoothSerial.write(stringToBytes(data), success, failure);
     },
     disconnect: function(event) {
         bluetoothSerial.disconnect(app.showMainPage, app.onError);
