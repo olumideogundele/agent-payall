@@ -138,10 +138,10 @@ var app = {
 	    // var bytes2=[1B 2D 01];
 	   // var double [1D 21 01];
         
-	    bluetoothSerial.write("1B 2D 0", success, failure);
-	     bluetoothSerial.write("1D 21 01", success, failure);
+	    bluetoothSerial.write([27, 69, 1, 104, 101, 108, 108, 111, 27, 69, 0], success, failure);
+	 
 	    
-	    bluetoothSerial.write(bytes2, success, failure);
+	   // bluetoothSerial.write(bytes2, success, failure);
 	    
 	    
 		
