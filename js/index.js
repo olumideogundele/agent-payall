@@ -120,7 +120,10 @@ var app = {
             alert("Failed writing data to Bluetooth peripheral");
         };
 
-        var data = messageInput.value;
+        var data = stringToBytes(messageInput.value);
+        
+        
+        
         bluetoothSerial.write(data, success, failure);
     },
     disconnect: function(event) {
