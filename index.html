@@ -283,6 +283,19 @@ $("#message").html('Connecting... Please wait.');
            data: {amount:amount,meter:metering,customername:customername,accounttype:accounttype,thirdparty:thirdparty,company:company,payment_type:payment_type,myaccounttype:myaccounttype,phone:phone},
 			async: false,
             dataType: "JSON",
+			beforeSend: function() {
+                    //    $("#insert").val('Connecting..+');
+						  $("#message").html('Connecting... Please wait.');
+			 
+			 
+			 
+            $("p").addClass("alert alert-warning");
+			
+			// var d = document.getElementById('txtdint2');
+					  $("#txtdint2").html('<img src=\'demo_wait.gif\'  height="64" alt="Connecting.. Please wait...">');
+					
+					 //d.innerHTML = '<img src=\'demo_wait.gif\'  height="64" alt="Connecting.. Please wait...">';
+                    },
             success: function(data) {
            //  $("#message").html(data);
            // $("p").addClass("alert alert-success");
@@ -323,7 +336,7 @@ $("#message").html('Connecting... Please wait.');
 				
 				  
 				  
-				  var printing = "Thank You for choosing PayAll.\nTransaction information below\n\nCustomer Name: "+customername+"\nPhone Number:"+phone+"\nMeter Name: "+meter+"\nMeter Type: "+paymenttypename+"\n Amount paid: N"+amount+"\nReciept Number (fets): "+fetsreceipt+"\nPayAll Number:"+paymentlogid+"\nToken: "+token+"\n KWH: "+KWH+"\nDate: "+datetime+"\nAccount Type: "+accounttype+"\n THANK YOU FOR YOUR PATRONAGE.\n\n";
+				  var printing = "\nThank You for choosing PayAll.\nTransaction information below\n\nCustomer Name: "+customername+"\nPhone Number:"+phone+"\nMeter Name: "+meter+"\nMeter Type: "+paymenttypename+"\nAmount paid: N"+amount+"\nReciept Number (fets): "+fetsreceipt+"\nPayAll Number:"+paymentlogid+"\nToken: "+token+"\nKWH: "+KWH+"\nDate: "+datetime+"\nAccount Type: "+accounttype+"\n THANK YOU FOR YOUR PATRONAGE.\n\n";
 				  
 				     localStorage.setItem("firstname", printing);
 				  
