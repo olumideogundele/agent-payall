@@ -5,15 +5,10 @@
   <head>
     <meta charset="utf-8">
       
-        
+        <meta name="format-detection" content="telephone=no" />
 		 
-	<!--	 
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />-->
-        
-        
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
+		 
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
     <title>Pay IBEDC Bill</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script
@@ -112,7 +107,7 @@ $("#printer").hide();
 						 	
 						 																
 			
-                      <table style="border:thin;"  border="2"  >       
+                               
 								
  	<input type="hidden" class="form-control" id="company" name="company"  value="" required>
 																	  
@@ -318,15 +313,16 @@ window.location.replace("printer.html");
 									 var statusParam = obj.status;
 									 	 var datetime = obj.datetime;
 									 
- var table = ' <table style="border:thin;"  border="2"><tr>													  <td style="text-align: left; vertical-align: middle;"><img src="Payall Web-02.png" widtd="102" height="53" alt="PayAllNG" longdesc="http://payall.ng/base" /></td>													  <td style="text-align: left; vertical-align: middle;"><img src="ibedc.png" widtd="102" height="53" alt="IBEDC" longdesc="#" /></td>									  </tr><tr><td colspan="2" style="text-align: center; vertical-align: middle;">Thank You for choosing PayAll.<br />Below are the information of you transaction.</td> </tr> <tr>														<th style="text-align: left; vertical-align: middle;">Account Number:</th>														<th style="text-align: left; vertical-align: middle;">'+meter+' </th></tr><tr><th style="text-align: left; vertical-align: middle;">Phone Number:</th><th style="text-align: left; vertical-align: middle;">'+phone+' </th></tr> <tr><th style="text-align: left; vertical-align: middle;"><strong>Amount:</strong></th><th style="text-align: left; vertical-align: middle;"><strong>'+amount+'</strong></th> </tr>  <tr><th style="text-align: left; vertical-align: middle;"><strong>KWH:</strong></th><th style="text-align: left; vertical-align: middle;"><strong>'+KWH+'</strong></th> 	</tr>  <tr>	<th style="text-align: left; vertical-align: middle;">Payment Method:</th><th style="text-align: left; vertical-align: middle;" '+paymenttypename+' </th></tr> <tr><th style="text-align: left; vertical-align: middle;">Customer Name:</th><th style="text-align: left; vertical-align: middle;">'+customername+' </th></tr><tr>	<th style="text-align: left; vertical-align: middle;">Reciept Number:</th>	<th style="text-align: left; vertical-align: middle;"> '+fetsreceipt+'</th></tr><tr><th style="text-align: left; vertical-align: middle;">Payment ID:</th><th style="text-align: left; vertical-align: middle;">'+paymentlogid+'</th></tr><tr><th style="text-align: left; vertical-align: middle;">Status:</th><th style="text-align: left; vertical-align: middle;"><span class="'+statusCSS+'">'+resp+'</span></th></tr><tr><th style="text-align: left; vertical-align: middle;">Token:</th><th style="text-align: left; vertical-align: middle;">'+token+' </th></tr><tr><th style="text-align: left; vertical-align: middle;">Date:</th><th style="text-align: left; vertical-align: middle;">'+datetime+' </th></tr><tr><th colspan="2" style="text-align: center; vertical-align: middle;">THANK YOU FOR YOUR PATRONAGE.</th></tr></thead></table> ';	 
+ var table = '<table class=""><tr>													  <td style="text-align: right; vertical-align: middle;"><img src="Payall Web-02.png" widtd="102" height="53" alt="PayAllNG" longdesc="http://payall.ng/base" /></td>													  <td style="text-align: left; vertical-align: middle;"><img src="ibedc.png" widtd="102" height="53" alt="IBEDC" longdesc="#" /></td>									  </tr><tr><td colspan="2" style="text-align: center; vertical-align: middle;">Thank You for choosing PayAll.<br />Below are the information of you transaction.</td> </tr> <tr>														<th style="text-align: right; vertical-align: middle;">Account Number:</th>														<th style="text-align: left; vertical-align: middle;">'+meter+' </th></tr><tr><th style="text-align: right; vertical-align: middle;">Phone Number:</th><th style="text-align: left; vertical-align: middle;">'+phone+' </th></tr> <tr><th style="text-align: right; vertical-align: middle;"><strong>Amount:</strong></th><th style="text-align: left; vertical-align: middle;"><strong>N'+amount+'</strong></th> </tr>  <tr><th style="text-align: right; vertical-align: middle;"><strong>KWH:</strong></th><th style="text-align: left; vertical-align: middle;"><strong>'+KWH+'</strong></th> 	</tr>  <tr>	<th style="text-align: right; vertical-align: middle;">Payment Method:</th><th style="text-align: left; vertical-align: middle;" '+paymenttypename+' </th></tr> <tr><th style="text-align: right; vertical-align: middle;">Customer Name:</th><th style="text-align: left; vertical-align: middle;">'+customername+' </th></tr><tr>	<th style="text-align: right; vertical-align: middle;">Reciept Number:</th>	<th style="text-align: left; vertical-align: middle;"> '+fetsreceipt+'</th></tr><tr><th style="text-align: right; vertical-align: middle;">Payment ID:</th><th style="text-align: left; vertical-align: middle;">'+paymentlogid+'</th></tr><tr><th style="text-align: right; vertical-align: middle;">Status:</th><th style="text-align: left; vertical-align: middle;"><span class="'+statusCSS+'">'+resp+'</span></th></tr><tr><th style="text-align: right; vertical-align: middle;">Token:</th><th style="text-align: left; vertical-align: middle;">'+token+' </th></tr><tr><th style="text-align: right; vertical-align: middle;">Date:</th><th style="text-align: left; vertical-align: middle;">'+datetime+' </th></tr><tr><th colspan="2" style="text-align: center; vertical-align: middle;">THANK YOU FOR YOUR PATRONAGE.</th></tr></thead></table>';	 
 					
 				
 				  
 				  
-				  var printing = " Thank You for choosing PayAll.\n Transaction information below\n\nCustomer Name: "+customername+"\nPhone Number: "+phone+"\nMeter Name: "+meter+"\Payment Type: "+paymenttypename+"\nAmount paid: N"+amount+"\nReciept Number (fets): "+fetsreceipt+"\nPayAll Number: "+paymentlogid+"\nToken: "+token+"\nKWH: "+KWH+"\nDate: "+datetime+"\n THANK YOU FOR YOUR PATRONAGE.\n\n";
+				  var printing = "Thank You for choosing PayAll.\nTransaction information below\n\nCustomer Name: "+customername+"\nPhone Number:"+phone+"\nMeter Name: "+meter+"\nMeter Type: "+paymenttypename+"\n Amount paid: N"+amount+"\nReciept Number (fets): "+fetsreceipt+"\nPayAll Number:"+paymentlogid+"\nToken: "+token+"\n KWH: "+KWH+"\nDate: "+datetime+"\n THANK YOU FOR YOUR PATRONAGE.\n\n";
 				  
 				     localStorage.setItem("firstname", printing);
-				   
+				  
+			 
 					   $("#txtdint2").html(table); 
 					   $("#printer").show();
 					 
