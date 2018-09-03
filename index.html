@@ -361,9 +361,12 @@ $("#message").html('Connecting... Please wait.');
 
 
 
- 
+  
+
+  </script>
+	    <script>
 				jQuery('.numbersOnly').keyup(function () { 
-    tdis.value = tdis.value.replace(/[^0-9\.]/g,'');
+    this.value = this.value.replace(/[^0-9\.]/g,'');
 });	
 		
             var editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
@@ -371,14 +374,12 @@ $("#message").html('Connecting... Please wait.');
                 matchBrackets: true,
                 mode: "application/x-httpd-php",
                 indentUnit: 4,
-                indentWitdTabs: true,
+                indentWithTabs: true,
                 enterMode: "keep",
                 tabMode: "shift"                                                
             });
             editor.setSize('100%','420px');
-         
-
-  </script>
+        </script>     
   
     <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
