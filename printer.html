@@ -7,24 +7,35 @@
 <script type="text/javascript"> 
 
  var name=localStorage.getItem("firstname");
- alert(name);
- 
- // $("#messageInput").val(name+"\n\n\n\n0");
-
-document.getElementById("messageInput2").value = name;  
-
- document.getElementById("messageInput").setAttribute('value',name);
  
 </script>	
-		 
+		<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+</style> 
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
 
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Bluetooth Serial Chat</title>
+        <title>Printer Select Page</title>
     </head>
     <body>
         <div class="app">
-            <h1>Bluetooth Serial Chat</h1>
+            <h1>Please select printer and print</h1>
             <div id="mainPage">
                 <ul id="deviceList">
                 </ul>
@@ -33,11 +44,11 @@ document.getElementById("messageInput2").value = name;
             <div id="detailPage">
                 <div id="resultDiv"></div>
                 <div>
-                    <input type="text" id="messageInput"/>
-			   <input type="text" id="messageInput2" value=""/>
-                    <button id="sendButton">Send</button>
+                    <input type="hidden" id="messageInput"/>
+			   <input type="hidden" id="messageInput2" value=""/>
+                    <button id="sendButton" class="button button2">Printer Reciept Now</button>
                 </div>
-                <button id="disconnectButton">Disconnect</button>
+                <button id="disconnectButton" class="button button3">Disconnect Printer</button>
             </div>
             <div id="statusDiv"></div>
         </div>
