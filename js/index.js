@@ -95,7 +95,7 @@ var app = {
 
         var success = function() {
             console.log("success");
-            resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + messageInput.value + "<br/>";
+            resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + localStorage.getItem("firstname"); + "<br/>";
             resultDiv.scrollTop = resultDiv.scrollHeight;
         };
 
@@ -103,7 +103,7 @@ var app = {
             alert("Failed writing data to Bluetooth peripheral");
         };
 
-        var data = messageInput.value;
+        var data = localStorage.getItem("firstname");
        var data2 = messageInput2.value;
         bluetoothSerial.write(data, success, failure);
        bluetoothSerial.write([10,10], success, failure);
