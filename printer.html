@@ -4,14 +4,17 @@
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-	<script>
+<script type="text/javascript"> 
 
  var name=localStorage.getItem("firstname");
  alert(name);
  
-  $("#messageInput").val(name+"\n\n\n\n0");
+ // $("#messageInput").val(name+"\n\n\n\n0");
 
-document.getElementById("messageInput").value = name;  
+document.getElementById("messageInput2").value = name;  
+
+ document.getElementById("messageInput").setAttribute('value',name);
+ 
 </script>	
 		 
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
