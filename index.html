@@ -158,6 +158,9 @@ window.location.replace("printer.html");
 
   function insertData() {
     var meter=$("#meter").val();
+	
+	$("#message").html('Finding '+meter+'.. Connecting... Please wait.');
+	$("p").addClass("alert alert-success");
     
    if(meter == null || meter == "" )
  {
@@ -170,7 +173,7 @@ window.location.replace("printer.html");
  
  }
  else{
-
+$("#message").html('Connecting... Please wait.');
 // AJAX code to send data to php file.
         $.ajax({
             type: "POST",
