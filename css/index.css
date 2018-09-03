@@ -21,11 +21,11 @@ button {
     font-size: 1.2em;
 }
 
-input[type=text] {
+/*input[type=text] {
     font-size: 0.6em;
     width: 45%;
 }
-
+*/
 #mainPage {
     text-align:center;
 }
