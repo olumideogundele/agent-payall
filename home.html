@@ -30,6 +30,7 @@
   {
 $("#myDiv").hide();
 $("#printer").hide();
+$("#messsge").hide();
 
 }
 </script>
@@ -83,14 +84,14 @@ function closeNav() {
                       <div class="well">
    
                           <form id="loginForm" metdod="" action="" novalidate>
-                                 <p id="message"></p>
+                                 <p id="message" style="width:100%; text-align:center;"></p>
 							  <div id= "mainDiv">
 							  <div class="form-group" >
                                   <label for="meter" class="control-label">Enter Meter/Account Number</label>
                                   <input type="text"  oninput="showMyLoading()" class="form-control numbersOnly" id="meter" name="meter" value="" required title="Please enter you Name" placeholder="">
                                   <span class="help-block"></span>
                               </div> 
-							  <button type="button" class="btn btn-success btn-block" name="insert-data" id="insert-data" onclick="insertData()">Verify Customer</button>
+ <button type="button" class="btn btn-success btn-block" name="insert-data" id="insert-data" onclick="insertData()">Verify Customer</button>
 							  </div>
                                
 
@@ -105,10 +106,10 @@ function closeNav() {
 									
 							   <div class="form-group">
                                   <label for="meter" class="control-label">Reciever Phone Number</label>
-                                 <input type="text" class="form-control" id="phone" name="phone"  value= "" required>
+                                 <input type="text"  class="form-control" id="phone" name="phone"  value= "" required>
                                   <span class="help-block"></span>
                               </div>
-							  <button type="button" class="btn btn-success btn-block" name="insert-pay" id="insert-pay" onclick=" pay()">Pay Now</button>
+ <button type="button" class="btn btn-success btn-block" name="insert-pay"  onMouseOver="showMyLoading2()" id="insert-pay" onclick="pay()">Pay Now</button>
 							 
 							 <div class="btn btn-info btn-block" name="insert-pay">Please confirm Informtion Below:</div>
 									<span class="help-block"></span><br>
@@ -271,6 +272,7 @@ $("#message").html('Connecting... Please wait.');
 					$("#myaccounttype").val(obj.myaccounttype); 
 				 
 					   $("#txtdint2").html('');
+					   $("#messsge").hide();
 					  }
 					  else
 					  {
@@ -409,6 +411,7 @@ var username=localStorage.getItem("username");
 			 
 					   $("#txtdint2").html(table); 
 					   $("#printer").show();
+					   $("#messsge").hide();
 					 
 			 
             },
@@ -434,8 +437,17 @@ var username=localStorage.getItem("username");
 		
 		function showMyLoading()
 		{
-			//alert("alerting");
+			 
 		  $("#txtdint2").html('<img src=\'demo_wait.gif\'  height="64" alt="Connecting.. Please wait...">');	
+			
+		}
+		
+		
+		
+ 		function showMyLoading2()
+		{
+			 
+		  $("#message").html('<img src=\'demo_wait.gif\'  height="64" alt="Connecting.. Please wait...">');	
 			
 		}
 		
@@ -447,6 +459,9 @@ var username=localStorage.getItem("username");
 			
 		}
 		
+		
+		
+		 
 				jQuery('.numbersOnly').keyup(function () { 
     this.value = this.value.replace(/[^0-9\.]/g,'');
 });	
