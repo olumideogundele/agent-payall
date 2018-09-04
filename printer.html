@@ -4,11 +4,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-<script type="text/javascript"> 
-
- var name=localStorage.getItem("firstname");
- 
-</script>	
+ 	
 		<style>
 .button {
     background-color: #4CAF50; /* Green */
@@ -31,9 +27,54 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
 
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+          <link rel="stylesheet" type="text/css" href="css/style.css" />
         <title>Printer Select Page</title>
     </head>
     <body>
+    
+      <div id="login-overlay" class="modal-dialog">
+     <div class="modal-content">
+          <div class="modal-header">
+          <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; </a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="home.html">IBEDC</a>
+  <a href="#">History</a>
+  <a href="#">Reprint</a>
+   <a href="index.html">Sign Out</a>
+</div>
+
+<span style="font-size:25px;cursor:pointer" onclick="openNav()">&#9776;
+
+<span style="font-size:15px;">
+ <script type="text/javascript"> 
+
+ var name=localStorage.getItem("fullname");
+ 
+  document.write("Welcome: "+name);
+</script>
+</span>
+
+ </span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+     
+               
+          </div>
+    
+ <h4 class="modal-title" id="myModalLabel" style="text-align:center;">
+  <img src="Payall Web-02.png" widtd="102" height="53" alt="PayAllNG"  /> </h4>
+           
+  </div>
+  </div>
         <div class="app">
             <h1>Please select printer and print</h1>
             <div id="mainPage">

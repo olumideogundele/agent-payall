@@ -7,6 +7,76 @@
       
         <meta name="format-detection" content="telephone=no" />
 		 
+         <script src="offline.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="offline-theme-hubspot.css" />
+<!--<link rel="stylesheet" href="../themes/offline-theme-chrome.css" />-->
+<link rel="stylesheet" href="offline-language-english.css" />
+<script type="text/javascript" charset="utf-8">
+
+	
+	
+    // Wait for device API libraries to load
+    //
+	
+	 
+	
+ 
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+     
+ 
+       var networkState = checkConnection();
+   /* load local files if there is not network connection */
+                  if (networkState == Connection.NONE) {
+                      window.location="error.html";
+                  } else {
+             var run = function(){
+  var req = new XMLHttpRequest();
+  req.timeout = 500;
+  req.open('GET', 'index.html', true);
+  req.send();
+}
+
+setInterval(run, 3000);
+                  }
+    }
+
+        function checkConnection() {
+            var networkState = navigator.connection.type;
+
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Cell 2G connection';
+            states[Connection.CELL_3G]  = 'Cell 3G connection';
+            states[Connection.CELL_4G]  = 'Cell 4G connection';
+            states[Connection.CELL]     = 'Cell generic connection';
+            states[Connection.NONE]     = 'No network connection';
+  return networkState;
+            //alert('Connection type: ' + states[networkState]);
+        }
+
+    </script>
+         <script>
+		 function reseting()
+		 {
+			 
+			localStorage.setItem("fullname", "null"); 
+			//alert("here")
+		 }
+		 
+		 
+		 </script>
+		 
+		 
 		 
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
     <title>Pay IBEDC Bill</title>
@@ -15,7 +85,7 @@
       src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
   </head>
    
-  <body>
+  <body onLoad="reseting()">
 
 
     <div id="login-overlay" class="modal-dialog">
@@ -122,7 +192,7 @@ $("p").addClass("alert alert-warning");
 		 localStorage.setItem("fullname", fullname);
 		 localStorage.setItem("phone", phone);
 		 
-				window.location.replace("home.html");		  
+				window.location.replace("dashboard.html");		  
 					  
 					  
 					
