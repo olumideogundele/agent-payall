@@ -4,6 +4,33 @@
 <html>
   <head>
     <meta charset="utf-8">
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+   function dialog() {
+    $("#dialog-confirm" ).dialog({
+      resizable: false,
+      height: "auto",
+      width: 400,
+      modal: true,
+      buttons: {
+        "Are you sure you want to continue.": function() {
+           $(this).dialog("close");
+		 pay();
+		  
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+		   alert("cancel Clicked");
+        }
+      }
+    });
+  }  
+  </script>
+    
+    
       <script type="text/javascript" charset="utf-8">
 
 	
@@ -141,7 +168,7 @@ function closeNav() {
 							  <div class="form-group" >
                                   <label for="meter" class="control-label">Enter Meter/Account Number</label>
                                   <input type="text"  oninput="showMyLoading()" class="form-control numbersOnly" id="meter" name="meter" value="" required title="Please enter you Name" placeholder="">
-                                  <span class="help-block"></span>
+                                   <div style="width:100%; text-align:center;"><span class="help-block" style="color:#000;  font-size:15px; font-weight:200; text-decoration:blink;" id="verify"></span></div>
                               </div> 
  <button type="button" class="btn btn-success btn-block" name="insert-data" id="insert-data" onclick="insertData()">Verify Customer</button>
 							  </div>
@@ -150,8 +177,8 @@ function closeNav() {
 							   <div id= "myDiv">
 							 <div class="form-group">
                                   <label for="meter" class="control-label">Amount</label>
-                                  <input type="text" class="form-control numbersOnly" id="amount" name="amount" value="" required title="Please enter you Name" placeholder="">
-                                  <span class="help-block"></span>
+                                  <input type="text"  oninput="paymentMade()" class="form-control numbersOnly" id="amount" name="amount" value="" required title="Please enter you Name" placeholder="">
+                                 <div style="width:100%; text-align:center;"> <span class="help-block" style="color:#F00;  font-size:19px;" id="paymentmade"> </span> </div>
                               </div>
 							  
 							 
@@ -306,8 +333,8 @@ $("#message").html('Connecting... Please wait.');
 					  
 					  if(resp == "Success")
 					  {
-				  $("p").addClass("alert alert-success");	  
-					  $("#message").html(resp);
+				/*  $("p").addClass("alert alert-success");	  
+					  $("#message").html(resp);*/
 			 
 			 
 			 
@@ -432,7 +459,7 @@ var username=localStorage.getItem("username");
 					  var resp = obj.resp;   
 			 
            // $("p").addClass("alert alert-success");
-					  alert(resp);
+					 // alert(resp);
 					   $("#myDiv").hide();
 					 $("#mainDiv").hide();
 					   var res = obj.res;
@@ -489,9 +516,12 @@ var username=localStorage.getItem("username");
 		
 		function showMyLoading()
 		{
-			 
+		 $("#verify").html('Please click on Verify Customer Button below');	 
 		  $("#txtdint2").html('<img src=\'demo_wait.gif\'  height="64" alt="Connecting.. Please wait...">');	
+					 
+		 	
 			
+			verify
 		}
 		
 		
@@ -510,7 +540,15 @@ var username=localStorage.getItem("username");
 		  $("#txtdint2").html('');	
 			
 		}
+			function paymentMade()
+		{
+			
+		  $("#paymentmade").html('PLEASE NOTE: Payment made cannot be reversed.');	
+			
+		}
 		
+		
+	 
 		
 		
 		 
