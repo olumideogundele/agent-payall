@@ -6,9 +6,10 @@
     <meta charset="utf-8">
       
         <meta name="format-detection" content="telephone=no" />
-		 
+		  <link rel="stylesheet" type="text/css" href="css/style.css">
          <script src="offline.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
  <link rel="stylesheet" href="offline-theme-hubspot.css" />
 <!--<link rel="stylesheet" href="../themes/offline-theme-chrome.css" />-->
@@ -65,16 +66,19 @@ setInterval(run, 3000);
         }
 
     </script>
-         <script>
-		 
+        <script
+      src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  </head>
+   <script type="text/javascript"> 
+
  var name=localStorage.getItem("fullname");
  
  if(name == "null")
  {
 	 	window.location.replace("index.html");
  }
-  
 </script>
+
 		 
 <style>
 * {
@@ -141,11 +145,43 @@ setInterval(run, 3000);
   </head>
    
   <body onLoad="retrieve()">
+   
 
 
     <div id="login-overlay" class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">
+             <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; </a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="home.html">IBEDC</a>
+   <a href="history.html">History</a>
+  <a href="#">Reprint</a>
+     <a href="singout.html">Sign Out</a>
+</div>
+
+<span style="font-size:25px;cursor:pointer" onclick="openNav()"><img src="menu.fw.png" width="37" height="34" alt="Menu">
+
+<span style="font-size:15px;">
+ <script type="text/javascript"> 
+
+ var name=localStorage.getItem("fullname");
+ 
+  document.write("Welcome: "+name);
+</script>
+</span>
+
+ </span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
                 <h4 class="modal-title" id="myModalLabel" style="text-align:center;">
                 <a href="dashboard.html"> <img src="Payall Web-02.png" widtd="102" height="53" alt="PayAllNG" longdesc="http://payall.ng/base" /></a><br>
 TRANSACTION HISTORY PAGE</h4>
