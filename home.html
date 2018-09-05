@@ -4,32 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-   function dialog() {
-    $("#dialog-confirm" ).dialog({
-      resizable: false,
-      height: "auto",
-      width: 400,
-      modal: true,
-      buttons: {
-        "Are you sure you want to continue.": function() {
-           $(this).dialog("close");
-		 pay();
-		  
-        },
-        Cancel: function() {
-          $( this ).dialog( "close" );
-		   alert("cancel Clicked");
-        }
-      }
-    });
-  }  
-  </script>
-    
+   <script type="text/javascript">
+    function clicked() {
+       if (confirm('Do you want to continue?')) {
+           pay();
+       } else {
+	       alert("Canceled Clicked. Thank You.");
+           return false;
+       }
+    }
+	</script>
     
       <script type="text/javascript" charset="utf-8">
 
@@ -188,7 +172,7 @@ function closeNav() {
                                  <input type="text"  class="form-control" id="phone" name="phone"  value= "" onBlur="showMyLoading2()" required>
                                   <span class="help-block"></span>
                               </div>
- <button type="button" class="btn btn-success btn-block" name="insert-pay"   id="insert-pay" onclick="pay()">Pay Now</button>
+ <button type="button" class="btn btn-success btn-block" name="insert-pay"   id="insert-pay" onclick="clicked()">Pay Now</button>
 							 
 							 <div class="btn btn-info btn-block" name="insert-pay">Please confirm Informtion Below:</div>
 									<span class="help-block"></span><br>
