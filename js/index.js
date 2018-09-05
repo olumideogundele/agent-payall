@@ -15,6 +15,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         refreshButton.addEventListener(TOUCH_START, this.refreshDeviceList, false);
         sendButton.addEventListener(TOUCH_START, this.sendData, false);
+		//  bluetoothSerial.disconnect(app.showMainPage, app.onError);
         disconnectButton.addEventListener(TOUCH_START, this.disconnect, false);
         deviceList.addEventListener('touchstart', this.connect, false);
     },
@@ -108,6 +109,7 @@ var app = {
         bluetoothSerial.write(data, success, failure);
        bluetoothSerial.write([10,10], success, failure);
        bluetoothSerial.write(data2, success, failure);
+	   bluetoothSerial.disconnect();
     },
     disconnect: function(event) {
         bluetoothSerial.disconnect(app.showMainPage, app.onError);
