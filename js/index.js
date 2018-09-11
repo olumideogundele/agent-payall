@@ -109,7 +109,7 @@ var app = {
         bluetoothSerial.write(data, success, failure);
        bluetoothSerial.write([10,10], success, failure);
        bluetoothSerial.write(data2, success, failure);
-	   bluetoothSerial.disconnect();
+	   //bluetoothSerial.disconnect();
     },
     disconnect: function(event) {
         bluetoothSerial.disconnect(app.showMainPage, app.onError);
