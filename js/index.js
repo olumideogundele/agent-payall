@@ -111,10 +111,10 @@ var app = {
        bluetoothSerial.write(data2, success, failure);
 	    
 	    
-	    setInterval(
-  function(){ bluetoothSerial.disconnect() },
-  5000
-);
+	  //  setInterval(
+ // function(){ bluetoothSerial.disconnect() },
+ // 5000
+//);
 	   //bluetoothSerial.disconnect();
     },
     disconnect: function(event) {
